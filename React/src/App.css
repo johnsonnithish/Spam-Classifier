@@ -1,0 +1,142 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  overflow-x: hidden;
+  overflow-y: auto;       /* allow vertical scroll only if needed */
+}
+
+
+@font-face {
+  font-family: Akira;
+  src: url("../src/assets/fonts/Akira.otf");
+}
+
+@font-face {
+  font-family: Typewriter;
+  src: url("../src/assets/fonts/JMH\ Typewriter.ttf");
+}
+
+@font-face {
+  font-family: Tech;
+  src: url("../src/assets/fonts/Technology.ttf");
+}
+/* Aurora background fixed to full screen */
+.aurora-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
+/* Foreground content — grows beyond the viewport if needed */
+.app-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* center only if it fits */
+  padding: 0;              /* remove extra bottom padding */
+  gap: 0;                  /* no vertical gap unless needed */
+}
+
+.algorithms-box {
+  background-color: rgba(255, 255, 255, 0);
+  margin: 50px;
+  width: 500px;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.algos-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 buttons per row */
+  gap: 15px; /* space between buttons */
+  justify-items: center; /* center buttons horizontally */
+  align-items: center;   /* center vertically */
+  padding: 20px;
+}
+
+.algorithms-box button {
+  font-family: "Tech";
+  font-size: 50px;
+  width: 200px;
+  height: 70px;
+  border: none;
+  border-radius: 20px;
+  background-color: #000;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.algorithms-box button:hover {
+  background-color: #333;
+}
+
+.algorithms-box button:active {
+  border: 1px solid white;
+}
+
+.algo-btn.selected { outline: 3px solid white; filter: brightness(1.15); }
+.analyze-button:disabled { opacity: 0.6; cursor: not-allowed; }
+.result { margin-top: 1rem; color: white; font-size: 1.1rem; }
+.error { color: #ff6b6b; }
+
+.window-box{
+  display: flex;
+  flex-direction: column;   /* stack children vertically */
+  align-items: center;      /* center horizontally */
+  gap: 16px;                /* space between input and button */
+}
+
+.analyze-button{
+  margin-top: 10px;
+  width: 120px;
+  background-color: #83ddec00;
+  box-shadow: 0px 2px 1px rgba(255, 255, 255, 0.5);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.analyze-button:active{
+  border: 1px solid white;
+}
+/* Text block centered with white background */
+.text-block {
+  background-color: transparent;
+  padding: 20px 30px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.01px dashed white;
+}
+
+/* Input styling */
+.text-input {
+  background-color: transparent;
+  width: 300px;
+
+  font-size: 18px;
+  text-align: center;
+  color: white;
+
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+}
